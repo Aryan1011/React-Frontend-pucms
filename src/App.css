@@ -1,0 +1,42 @@
+.headerContainer{
+  position: relative;
+
+}
+
+.headerText{
+  position: absolute;
+  bottom: 1rem;
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.reachContainer{
+  display: flex;
+}
+
+.reachCard{
+  width: 33%;
+  margin: 2px 4px;
+  border: 2px solid red;
+  background-color: white;
+}
+
+.newsContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.newsCard{
+  display: flex;
+  width: 100%;
+}
+
+.newsImage{
+    width: 30%;
+}
+
+.newsContent{
+    width:70%;
+}
