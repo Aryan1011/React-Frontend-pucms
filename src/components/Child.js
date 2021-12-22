@@ -3,8 +3,7 @@ import React from 'react';
 function Child  () {
     return (
         <div>
-
-             mei chutia router hu 
+             mei router hu 
         </div>
     )
 }

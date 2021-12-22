@@ -5,22 +5,22 @@ import img3 from '../../assets/profile-4.jpeg'
 const data = [
     {
         src: img1,
-        content: ""
+        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quo quia dolore. Quibusdam saepe mollitia iste vero alias dolore adipisci soluta quasi porro eius fugiat, odio, dignissimos non expedita illo fuga exercitationem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quo quia dolore. Quibusdam saepe mollitia iste vero alias dolore adipisci soluta quasi porro eius fugiat, odio, dignissimos non expedita illo fuga exercitationem."
     },
     {
         src: img2,
-        content: ""
+        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quo quia dolore. Quibusdam saepe mollitia iste vero alias dolore adipisci soluta quasi porro eius fugiat, odio, dignissimos non expedita illo fuga exercitationem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quo quia dolore. Quibusdam saepe mollitia iste vero alias dolore adipisci soluta quasi porro eius fugiat, odio, dignissimos non expedita illo fuga exercitationem."
     },
     {
         src: img3,
-        content: ""
+        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quo quia dolore. Quibusdam saepe mollitia iste vero alias dolore adipisci soluta quasi porro eius fugiat, odio, dignissimos non expedita illo fuga exercitationem.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quo quia dolore. Quibusdam saepe mollitia iste vero alias dolore adipisci soluta quasi porro eius fugiat, odio, dignissimos non expedita illo fuga exercitationem."
     }
 ]
 
 function News() {
     return (
         <div>
-            <h1>News</h1>
+            <h1 className='newsHeading' >News</h1>
             <div className='newsContainer'>
                 {data.map((d, i) => {
 

@@ -13,15 +13,15 @@ import src6 from '../assets/teesra.jpg'
 const reachData = [
     {
         imgsrc: src1,
-        content: "",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam reiciendis nam culpa hic, recusandae quo dolorem modi illo nesciunt alias. Quod asperiores dolorum, enim voluptatibus nesciunt alias aliquid natus cumque saepe dolor?",
     },
     {
         imgsrc: src2,
-        content: "",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam reiciendis nam culpa hic, recusandae quo dolorem modi illo nesciunt alias. Quod asperiores dolorum, enim voluptatibus nesciunt alias aliquid natus cumque saepe dolor?",
     },
     {
         imgsrc: src3,
-        content: "",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam reiciendis nam culpa hic, recusandae quo dolorem modi illo nesciunt alias. Quod asperiores dolorum, enim voluptatibus nesciunt alias aliquid natus cumque saepe dolor?",
     },
 ]
 
@@ -29,15 +29,15 @@ const reachData = [
 const successData = [
     {
         imgsrc: src4,
-        content: "",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam reiciendis nam culpa hic, recusandae quo dolorem modi illo nesciunt alias. Quod asperiores dolorum, enim voluptatibus nesciunt alias aliquid natus cumque saepe dolor?",
     },
     {
         imgsrc: src5,
-        content: "",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam reiciendis nam culpa hic, recusandae quo dolorem modi illo nesciunt alias. Quod asperiores dolorum, enim voluptatibus nesciunt alias aliquid natus cumque saepe dolor?",
     },
     {
         imgsrc: src6,
-        content: "",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam reiciendis nam culpa hic, recusandae quo dolorem modi illo nesciunt alias. Quod asperiores dolorum, enim voluptatibus nesciunt alias aliquid natus cumque saepe dolor?",
     },
 ]
 
@@ -47,9 +47,9 @@ function Home() {
     return (
         <div>
             <HomeHeader />
-            <Modular data={reachData} title="Reach" />
+            <Modular data={reachData} title="OUR REACH" />
             <News/>
-            <Modular data={successData} title="Success" />
+            <Modular data={successData} title="SUCCESS STORIES" />
             
         </div>
     )

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import Child from './components/Child';
@@ -13,6 +12,7 @@ import {
 import Home from './components/Home';
 import Complaints from './components/Complaints';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import { useState } from 'react';
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -55,7 +55,8 @@ function App() {
           <Route path="comp" element={<Complaints />} />
           <Route path='comp/:name' element={<Child />} />
         </Routes> :
-        
+
+        <Footer/>  
       
     </div>
   );

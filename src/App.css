@@ -6,22 +6,30 @@
 .headerText{
   position: absolute;
   bottom: 1rem;
-  
   width: 100%;
   display: flex;
   justify-content: center;
 }
-
-.reachContainer{
+ /* Modular Part */
+.modularContainer h1{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgb(247, 240, 240);
+}
+.modularCard{
   display: flex;
 }
 
 .reachCard{
   width: 33%;
-  margin: 2px 4px;
-  border: 2px solid red;
-  background-color: white;
+  margin: 4px 8px;
+  background-color: rgb(247, 240, 240);
 }
+
+/* News Part */
 
 .newsContainer{
   display: flex;
@@ -31,12 +39,96 @@
 .newsCard{
   display: flex;
   width: 100%;
+  margin: 4px 8px;
+  background-color: rgb(247, 240, 240);
 }
 
 .newsImage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
     width: 30%;
+    margin: 1em 5%;
+    box-shadow: 2px 2px 2px black;
 }
 
 .newsContent{
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
     width:70%;
+    margin: 1em 5%;
+    font-family: cursive;
+    padding: 0.5em 0.5em;
+}
+
+.newsHeading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(247, 240, 240);
+}
+
+/* Footer */
+.footer{
+  background-color: #2c292f;
+  display: flex;
+}
+.leftFooter{
+  margin: 1em 1em;
+  width: 33%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.midFooter{
+  width: 33%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 1em 1em;
+}
+.rightFooter{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 33%;
+  margin: 1em 1em;
+}
+/* Modular  */
+.contentCard{
+  background-color: lightgrey;
+  padding: 0.5em 0.5em;
+}
+
+/* Complaint Card */
+
+.complaintCard{
+  width: 30%;
+  height: 60vh;
+  box-shadow: 2px 2px 2px black;
+  margin: 1em 1em;
+}
+.complaintUser{
+  box-shadow: 2px 2px 2px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.complaintDepartment{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px black;
+}
+
+.complaintSubject{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px black;
+}
+.complaintDetail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px black;
 }
