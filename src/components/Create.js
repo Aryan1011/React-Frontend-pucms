@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-function Details (){
+function Create (){
     return(
         <div>
-            detials
+            Create
         </div>
 
     )
@@ -13,4 +13,4 @@ function Details (){
 
 
 
-export default Details
+export default Create;

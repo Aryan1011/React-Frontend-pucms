@@ -9,6 +9,7 @@ import {
   useParams,
   Routes
 } from "react-router-dom";
+import Create from './components/Create';
 import Home from './components/Home';
 import Complaints from './components/Complaints';
 import Navbar from './components/Navbar';
@@ -18,16 +19,20 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const clientId = '303134775990-1hf8tj1trd60o102ad65doskbe9lemnc.apps.googleusercontent.com';
   const onSuccess = (res) => {
-    console.log('sucess', res.profileObj);
     setLoggedIn(true);
+    setUser(res.profileObj);
   }
   const onFailure = (res) => {
     console.log('failure');
   }
   const onLogoutSuccess = () => {
     console.log("logout");
+
     setLoggedIn(false);
   }
+
+  const [user,setUser] = useState("");
+
   return (
     <div className="App">
       <Navbar loggedIn={loggedIn} />
@@ -52,9 +57,10 @@ function App() {
       
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="comp" element={<Complaints />} />
-          <Route path='comp/:name' element={<Child />} />
-        </Routes> :
+          <Route path="/complaint" element={<Complaints user={user} />} />
+          <Route path="/create" element={<Create/>} />
+          <Route path='/complaint/:id' element={<Child />} />
+        </Routes> 
 
         <Footer/>  
       

@@ -9,7 +9,7 @@ function Navbar({loggedIn}) {
                     Home
                 </button>
             </Link>
-            {loggedIn &&  <Link to="/comp">
+            {loggedIn &&  <Link to="/complaint">
                 <button>
                     complaints
                 </button>

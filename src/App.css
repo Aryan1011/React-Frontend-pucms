@@ -97,11 +97,16 @@
   padding: 0.5em 0.5em;
 }
 
+
+
 /* Complaint Card */
 
+.complaintCards{
+  width: 100%;
+  padding: 10px 10px ;
+}
 .complaintCard{
-  width: 30%;
-  height: 60vh;
+  width: 100%;
   box-shadow: 2px 2px 2px black;
   margin: 1em 1em;
 }
@@ -131,4 +136,16 @@
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 2px black;
+}
+
+.gridContainer{
+  display :grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 1rem;
+  width: 100%;
+
+}
+
+.gridChild{
+  width:100%;
 }
