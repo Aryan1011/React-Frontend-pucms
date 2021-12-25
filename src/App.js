@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Create from './components/Create';
 import Home from './components/Home';
+import Edit from './components/Edit';
 import Complaints from './components/Complaints';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -36,12 +37,12 @@ function App() {
   return (
     <div className="App">
       <Navbar loggedIn={loggedIn} />
-      <div style={{}}>
+      <div>
 
         {
           !loggedIn ? <GoogleLogin
             clientId={clientId}
-            buttonText="Login"
+            buttonText="Login With google"
             onSuccess={onSuccess}
             onFailure={onFailure}
             cookiePolicy={'single_host_origin'}
@@ -56,10 +57,18 @@ function App() {
       </div>
       
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/complaint" element={<Complaints user={user} />} />
-          <Route path="/create" element={<Create/>} />
-          <Route path='/complaint/:id' element={<Child />} />
+          {loggedIn?
+          ( <>
+          <Route path="/create" element={<Create user={user} />} />
+          <Route path='/complaint/:id' element={<Child user={user} />} />
+            <Route path ='/complaint/edit/:id' element={<Edit/>} />
+          
+          
+          </>):
+          (<></>)}
+         
         </Routes> 
 
         <Footer/>  

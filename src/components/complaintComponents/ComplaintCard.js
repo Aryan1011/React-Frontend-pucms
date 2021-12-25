@@ -3,43 +3,41 @@ import { FaUser, FaBook, FaAddressBook, FaBible, FaEdit, FaBitbucket } from 'rea
 import {Link} from "react-router-dom"
 
 function ComplaintCard({complaint}) {
-    console.log(complaint);
-    
     return (
                         <div className="complaintCard">
-            <div className="upperComplaint" style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <div className="upperComplaint">
                 <div className="complaintUser">
-                        <div style={{width:'20%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div className='iconComplaint'>
                     <FaUser/>
                         </div>
-                        <div style={{width:'80%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div className='halfBoxComplaint'>
                      <p>{complaint.name}</p>
                         </div>
                 </div>
                 <div className="complaintDepartment">
-                <div style={{width:'20%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <div className='iconComplaint'>
                     <FaBook/>
                         </div>
-                        <div style={{width:'80;%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div className='halfBoxComplaint'>
                      <p>{complaint.department}</p>
                         </div>
                 </div>
             </div>
 
                 <div className="complaintSubject">
-                <div style={{width:'10%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <div className='iconFullComplaint'>
                     <FaAddressBook/>
                         </div>
-                        <div style={{width:'90%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div className='boxFullComplaint'>
                     <p>{complaint.subject}</p>
                         </div>
                 </div>
 
                 <div className="complaintDetail">
-                <div style={{width:'10%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                <div className='iconFullComplaint'>
                     <FaBible/>
                         </div>
-                        <div style={{width:'90%',height:'60%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <div className='boxFullComplaint'>
                     
                     <Link to={`/complaint/${complaint._id}`}>
                     <p>Read more</p>

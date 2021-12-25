@@ -101,6 +101,35 @@
 
 /* Complaint Card */
 
+.iconComplaint{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+.upperComplaint{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconFullComplaint{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+.boxFullComplaint{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.halfBoxComplaint{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
 .complaintCards{
   width: 100%;
   padding: 10px 10px ;
