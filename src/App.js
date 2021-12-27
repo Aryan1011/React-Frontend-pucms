@@ -7,7 +7,8 @@ import {
   Route,
   Link,
   useParams,
-  Routes
+  Routes,
+  useNavigate
 } from "react-router-dom";
 import Create from './components/Create';
 import Home from './components/Home';
@@ -17,6 +18,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { useState } from 'react';
 function App() {
+  const navigate=useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
   const clientId = '303134775990-1hf8tj1trd60o102ad65doskbe9lemnc.apps.googleusercontent.com';
   const onSuccess = (res) => {
@@ -28,21 +30,24 @@ function App() {
   }
   const onLogoutSuccess = () => {
     console.log("logout");
-
     setLoggedIn(false);
+    navigate('/');
   }
 
   const [user,setUser] = useState("");
 
   return (
     <div className="App">
+    <div className='flexBox'>
+    <div className='navBtn'>
       <Navbar loggedIn={loggedIn} />
-      <div>
+    </div>
+      <div className='googleBtn'>
 
         {
           !loggedIn ? <GoogleLogin
             clientId={clientId}
-            buttonText="Login With google"
+            buttonText="Login With Google"
             onSuccess={onSuccess}
             onFailure={onFailure}
             cookiePolicy={'single_host_origin'}
@@ -55,6 +60,7 @@ function App() {
             </GoogleLogout>
         }
       </div>
+    </div>
       
         <Routes>
           <Route exact path="/" element={<Home />} />

@@ -20,7 +20,7 @@ const data = [
 function News() {
     return (
         <div>
-            <h1 className='newsHeading' >News</h1>
+            <h1 className='newsHeading' id='News' >News</h1>
             <div className='newsContainer'>
                 {data.map((d, i) => {
 

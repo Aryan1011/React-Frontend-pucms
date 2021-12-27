@@ -5,13 +5,28 @@ function Navbar({loggedIn}) {
     return (
         <div>
             <Link to="/">
-                <button>
+                <button className='navButtons'>
                     Home
                 </button>
             </Link>
+            <Link to="#">
+                <button className='navButtons'>
+                    Our Reach
+                </button>
+            </Link>
+            <Link to="">
+                <button className='navButtons'>
+                    News
+                </button>
+            </Link>
+            <Link to="#">
+                <button className='navButtons'>
+                    Stories
+                </button>
+            </Link>
             {loggedIn &&  <Link to="/complaint">
-                <button>
-                    complaints
+                <button className='navButtons'>
+                    Complaint Register
                 </button>
             </Link> }
            

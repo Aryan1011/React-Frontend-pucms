@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import axios from 'axios'
-import { createBrowserHistory } from 'history'
 
 const Edit = ({ user }) => {
-    const history = createBrowserHistory();
+    const navigate = useNavigate();
     const { id } = useParams();
     console.log(id);
 
@@ -57,12 +56,18 @@ const Edit = ({ user }) => {
         event.preventDefault();
         const res = await axios.put(`http://localhost:5000/api/complaints/${id}`, complaint);
         console.log(res);
-        history.push('/complaint');
+        navigate('/complaint');
     }
     return (
     
 
-        <div className='createComplaint'>
+        <div className='createEditComplaint'>
+
+            <div>
+            <button className='navButtons'  onClick={() => navigate(-1)}>
+                    Go Back
+                </button>
+            </div>
             <div className="createHeading">
                 <h1>Edit A Complaint</h1>
             </div>
@@ -107,7 +112,7 @@ const Edit = ({ user }) => {
         <textarea name="detail" value={complaint.detail} onChange={inputEvent} ></textarea>
     </div>
     <div className="formGroup">
-        <button type='submit' className='createSubmit' onClick={(e) => { onSubmits(e) }}  >File Complaint</button>
+        <button type='submit' className='createSubmit' onClick={(e) => { onSubmits(e) }}  >Make Changes</button>
 
     </div>
 </div>

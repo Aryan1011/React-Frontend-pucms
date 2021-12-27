@@ -5,10 +5,12 @@ import {
     Route,
     Routes,
     Link,
-    useParams
+    useParams,
+    useNavigate
 } from "react-router-dom";
 import ComplaintCard from './complaintComponents/ComplaintCard';
 function Complaints({ user }) {
+    const navigate=useNavigate();
     const [data, setData] = useState([]);
     const getAllComplaints = async () => {
         const response = await axios.get("http://localhost:5000/api/complaints");
@@ -20,13 +22,24 @@ function Complaints({ user }) {
     }, [])
     return (
         <div className='complaintCards' style={{ backgroundColor: ' rgb(247, 240, 240)' }}>
-            
-            <Link to="/create">
-                <button>
-                    Create Complaint
+            <div className='complaintHeader'>
+            <div>
+            <button className='navButtons'  onClick={() => navigate(-1)}>
+                    Go Back
                 </button>
-            </Link>
-            <h1>All Complaints </h1>
+            </div>
+                <div className='ComplaintHeaderCreate'>
+                    <Link to="/create">
+                        <button className='navButtons'>
+                            Create Complaint
+                        </button>
+                    </Link>
+                </div>
+                <div className='complaintHeaderHeading'>
+                    <h1>All Complaints </h1>
+                </div>
+            </div>
+
             <div className='gridContainer'>
                 {data?.map((d, i) => {
                     return (

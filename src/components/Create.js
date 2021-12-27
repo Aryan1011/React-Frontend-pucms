@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-
-
+import { useNavigate } from "react-router-dom";
 function Create ({user}){
-
+        const navigate=useNavigate();
         const [complaint,setComplaint]= useState({
             roll: "",
             name: "",
@@ -15,7 +14,6 @@ function Create ({user}){
             detail: "",
         });
         const inputEvent=(event)=>{
-
             const {name,value}=event.target;
             console.log(name);
             setComplaint((preValue)=>{
@@ -26,7 +24,6 @@ function Create ({user}){
                     }
             });
         };
-
         const inputRadioEvent=(event)=>{
             setComplaint((prev)=>{
                 return{
@@ -35,15 +32,20 @@ function Create ({user}){
                 }
             })
         };
-
         const onSubmits= async(event)=>{
             event.preventDefault();
-            const res =await axios.post("http://localhost:5000/api/complaints" , complaint);
-            console.log(res);
-        
+            console.log(complaint);
+            const res = await axios.post(`http://localhost:5000/api/complaints`,complaint);
+            console.log(res);  
+            navigate('/complaint')
         }
     return(
         <div className='createComplaint'>
+        <div>
+            <button className='navButtons'  onClick={() => navigate(-1)}>
+                    Go Back
+                </button>
+            </div>
         <div className="createHeading">
             <h1>File A Complaint</h1>
         </div>
@@ -59,10 +61,6 @@ function Create ({user}){
                 <label htmlFor="name" className='labelCreate'>Name</label>
                 <input type="text" name='name' value={complaint.name} onChange={inputEvent} placeholder='David Warner' />
             </div>
-            {/* <div className="formGroup">
-                <label htmlFor="email" className='labelCreate'>Email</label>
-                <input type="text" name='email' value={complaint.email} onChange={inputEvent} placeholder='example@gmail.com' />
-            </div> */}
             <div className="formGroup">
                 <label htmlFor="department" className='labelCreate'>Department</label>
                 <input type="text" name='department' value={complaint.department} onChange={inputEvent} placeholder='UIET' />
@@ -92,18 +90,10 @@ function Create ({user}){
             </div>
             <div className="formGroup">
                 <button type='submit' className='createSubmit' onClick={(e)=>{onSubmits(e)}}  >File Complaint</button>
-
             </div>
-
         </div>
         </form>
-            
         </div>
-
     )
 }
-
-
-
-
 export default Create;
