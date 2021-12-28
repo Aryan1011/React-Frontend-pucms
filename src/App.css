@@ -1,20 +1,16 @@
 
   /* Navbar  */
-.flexBox{
+.nav{
+  background-color: #474547;
+}
+.navbarLeft{
+  width: 90%;
+}
+.navbarRight{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: #4c4c4d;
-}
-.navBtn{
-  width: 80%;
-}
-.googleBtn{
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 10%;
 }
 .navButtons{
   background-color: #2c292f;
@@ -328,4 +324,57 @@ width: 25%;
   
   cursor: pointer;
   color: blue;
+}
+
+/* Login */
+.login{
+  height:70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.loginWrapper{
+  box-shadow: 0px 0px 5px 2px black;
+  padding: 50px 50px;
+}
+.loginTitle{
+}
+.loginButton{
+  background-color: #df4930;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding:px 5px;
+}
+.loginTitle{
+  margin: 0.5em 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.0em;
+  color: white;
+}
+.loginLogo{
+  color: white;
+  font-size: 2.0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1em;
+}
+.loginHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+.loginHeader2{
+  margin: 1em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
 }

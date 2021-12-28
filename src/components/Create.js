@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 function Create ({user}){
+
         const navigate=useNavigate();
         const [complaint,setComplaint]= useState({
             roll: "",
@@ -34,8 +35,8 @@ function Create ({user}){
         };
         const onSubmits= async(event)=>{
             event.preventDefault();
-            console.log(complaint);
-            const res = await axios.post(`http://localhost:5000/api/complaints`,complaint);
+            console.log(user);
+            const res = await axios.post(`https://backendpucmsawaaz.herokuapp.com/api/complaints`,complaint);
             console.log(res);  
             navigate('/complaint')
         }

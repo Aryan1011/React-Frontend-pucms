@@ -13,7 +13,7 @@ function Complaints({ user }) {
     const navigate=useNavigate();
     const [data, setData] = useState([]);
     const getAllComplaints = async () => {
-        const response = await axios.get("http://localhost:5000/api/complaints");
+        const response = await axios.get("https://backendpucmsawaaz.herokuapp.com/api/complaints");
         setData(response.data);
         console.log('here');
     }

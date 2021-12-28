@@ -10,7 +10,7 @@ const Edit = ({ user }) => {
     const [complaint, setComplaint] = useState();
 
     const fetchComplaint = async () => {
-        const response = await axios.get(`http://localhost:5000/api/complaints/${id}`);
+        const response = await axios.get(`https://backendpucmsawaaz.herokuapp.com/api/complaints/${id}`);
         console.log(response.data);
         setComplaint(response.data);
         console.log("old complaint");
@@ -54,7 +54,7 @@ const Edit = ({ user }) => {
 
     const onSubmits = async (event) => {
         event.preventDefault();
-        const res = await axios.put(`http://localhost:5000/api/complaints/${id}`, complaint);
+        const res = await axios.put(`https://backendpucmsawaaz.herokuapp.com/api/complaints/${id}`, complaint);
         console.log(res);
         navigate('/complaint');
     }

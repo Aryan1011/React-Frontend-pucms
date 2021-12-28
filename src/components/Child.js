@@ -8,7 +8,7 @@ function Child({user}) {
     const [self , setSelf] = useState(false);
     let { id } = useParams();
     const fetchComplaint = async () => {
-        const response = await axios.get(`http://localhost:5000/api/complaints/${id}`);
+        const response = await axios.get(`https://backendpucmsawaaz.herokuapp.com/api/complaints/${id}`);
         console.log(id);
         setData(response.data);
     }
@@ -22,7 +22,7 @@ function Child({user}) {
     },[id,data])
     const deleteComplaint=async ()=>{
         console.log(user);
-        const deleteResponse = await axios.delete(`http://localhost:5000/api/complaints/${id}`);
+        const deleteResponse = await axios.delete(`https://backendpucmsawaaz.herokuapp.com/api/complaints/${id}`);
         console.log(deleteResponse);
         navigate('/complaint');
     }

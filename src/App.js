@@ -1,5 +1,4 @@
 import './App.css';
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import Child from './components/Child';
 import {
   BrowserRouter as Router,
@@ -8,75 +7,54 @@ import {
   Link,
   useParams,
   Routes,
-  useNavigate
+  useNavigate,
+  Navigate
 } from "react-router-dom";
 import Create from './components/Create';
 import Home from './components/Home';
 import Edit from './components/Edit';
 import Complaints from './components/Complaints';
+import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { useState } from 'react';
+import { useState ,useEffect } from 'react';
 function App() {
-  const navigate=useNavigate();
-  const [loggedIn, setLoggedIn] = useState(false);
-  const clientId = '303134775990-1hf8tj1trd60o102ad65doskbe9lemnc.apps.googleusercontent.com';
-  const onSuccess = (res) => {
-    setLoggedIn(true);
-    setUser(res.profileObj);
-  }
-  const onFailure = (res) => {
-    console.log('failure');
-  }
-  const onLogoutSuccess = () => {
-    console.log("logout");
-    setLoggedIn(false);
-    navigate('/');
+  const [boolUser,setBoolUser]=useState(false);
+  const [user,setUser] = useState("");
+
+  const preserveData =  () =>{
+    if(!user){
+      return ;
+    }
+    sessionStorage.setItem('user',JSON.stringify(user));
   }
 
-  const [user,setUser] = useState("");
+  useEffect(() => {
+    preserveData();
+  }, [user]);
+
+  useEffect(() => {
+    const localUser = JSON.parse(sessionStorage.getItem('user'));
+    if(localUser){
+      setBoolUser(true);
+      setUser(localUser);
+      console.log(user);
+      console.log(localUser)
+    }
+  }, [])
 
   return (
     <div className="App">
-    <div className='flexBox'>
-    <div className='navBtn'>
-      <Navbar loggedIn={loggedIn} />
-    </div>
-      <div className='googleBtn'>
 
-        {
-          !loggedIn ? <GoogleLogin
-            clientId={clientId}
-            buttonText="Login With Google"
-            onSuccess={onSuccess}
-            onFailure={onFailure}
-            cookiePolicy={'single_host_origin'}
-          /> :
-            <GoogleLogout
-              clientId={clientId}
-              buttonText="Logout"
-              onLogoutSuccess={onLogoutSuccess}
-            >
-            </GoogleLogout>
-        }
-      </div>
-    </div>
-      
+      <Navbar boolUser={boolUser} setBoolUser={setBoolUser} setUser={setUser} user={user} />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/complaint" element={<Complaints user={user} />} />
-          {loggedIn?
-          ( <>
-          <Route path="/create" element={<Create user={user} />} />
-          <Route path='/complaint/:id' element={<Child user={user} />} />
-            <Route path ='/complaint/edit/:id' element={<Edit/>} />
-          
-          
-          </>):
-          (<></>)}
-         
+          {/* <Route path="/login" element ={boolUser ? <Navigate to="/"/> : <Login setUser = {setUser} setBoolUser={setBoolUser}/>}/> */}
+          <Route path="/complaint" element={!boolUser ? <></>:<Complaints/>} />
+          <Route path="/create" element={!boolUser ? <></> :<Create user={user} />} />
+          <Route path='/complaint/:id' element={!boolUser ? <></>:<Child user={user} />} />
+            <Route path ='/complaint/edit/:id' element={!boolUser ? <></>: <Edit/>} />
         </Routes> 
-
         <Footer/>  
       
     </div>
