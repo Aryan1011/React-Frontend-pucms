@@ -77,7 +77,7 @@ function Navbar({ boolUser ,setBoolUser,setUser,user }) {
                 ) : (
                     <GoogleLogin
                     clientId={clientId}
-                    buttonText="Login With Googlea"
+                    buttonText="Login With Google"
                     onSuccess={onSuccess}
                     onFailure={onFailure}
                     cookiePolicy={'single_host_origin'}

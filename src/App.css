@@ -2,20 +2,21 @@
   /* Navbar  */
 .nav{
   background-color: #474547;
+  padding:4px 6px;
 }
 .navbarLeft{
-  width: 90%;
+  width: 80%;
 }
 .navbarRight{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
+  width: 20%;
 }
 .navButtons{
   background-color: #2c292f;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   color: white;
   padding: 10px 20px;
   text-align: center;
@@ -25,20 +26,35 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0.2em 0.2em;
 }
+
+
+.navButtons:hover{
+  color: white;
+  background-color: #9c9c9c;
+  
+}
 /* header Componet */
 .headerContainer{
   position: relative;
 }
 .headerText{
   position: absolute;
-  bottom: 1rem;
-  width: 100%;
+  bottom: 0;
+  top:50%;
+  left:25%;
+  right:0;
+  width: 60%;
   display: flex;
   justify-content: center;
 }
  /* Modular Part */
+.modularContainer{
+  /* margin-top: 0.5rem; */
+  padding: 1rem 2rem;
+}
 .modularContainer h1{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Secular One', sans-serif;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,25 +63,29 @@
 }
 .modularCard{
   display: flex;
+  padding: 1rem;
 }
-
 .reachCard{
-  width: 33%;
-  margin: 4px 8px;
+  width: 33.333%; 
+  margin: 0rem 0.5rem;
   background-color: rgb(247, 240, 240);
 }
-
 /* News Part */
-
+.newsParentContainer{
+  padding:0rem 2rem;
+}
 .newsContainer{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
 }
 
 .newsCard{
   display: flex;
+  margin-top: 0.5rem;
   width: 100%;
-  margin: 4px 8px;
   background-color: rgb(247, 240, 240);
 }
 
@@ -75,7 +95,9 @@
   align-items: center;
     width: 30%;
     margin: 1em 5%;
-    box-shadow: 2px 2px 2px black;
+}
+.newsImage img{
+  box-shadow: 0px 0px 5px 2px black; 
 }
 
 .newsContent{
@@ -84,16 +106,17 @@
   justify-content: center;
   align-items: center;
     width:70%;
-    margin: 1em 5%;
+
     font-family: cursive;
-    padding: 0.5em 0.5em;
+    padding: 0.9rem 0.9rem;
 }
 
 .newsHeading{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Secular One', sans-serif;
+  padding: 1rem 1rem;
   background-color: rgb(247, 240, 240);
 }
 
@@ -117,10 +140,101 @@
   width: 33%;
   margin: 1em 1em;
 }
+.cautionFooter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Modular  */
 .contentCard{
   background-color: lightgrey;
   padding: 0.5em 0.5em;
+  height :300px;
+}
+
+@media(max-width:990px){
+  .contentCard{
+    height:350px;
+  }
+}
+
+@media(max-width:840px){
+  .contentCard{
+    height:400px;
+  }
+}
+
+@media(max-width:780px){
+  .modularCard{
+    flex-direction: column;
+  }
+
+  .reachCard{
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .contentCard{
+    height: auto;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .leftFooter{
+      width:100%;
+     
+     
+      justify-content: center;
+  }
+
+  .midFooter{
+    width:100%;
+    display: flex ;
+   flex-direction: column;
+   align-items:center;
+    justify-content: center;
+
+  }
+
+  .rightFooter{
+    width:100%;
+
+    display: flex ;
+    flex-direction: column;
+   align-items:center;
+   
+    justify-content: center;
+  }
+
+  .aboutusText{
+    font-size:10px;
+  }
+}
+
+
+@media(max-width:720px){
+  .newsCard{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsImage{
+    width: 70%;
+  }
+
+  .evenNews_div1{
+    order:2;
+  }
+
+  .evenNews_div2{
+    order:1;
+  }
+
+  .newsContent{
+    width: 100%;
+  }
 }
 
 
@@ -377,4 +491,8 @@ width: 25%;
   justify-content: center;
   align-items: center;
   font-size: 1em;
+}
+
+.modularImage{
+  box-shadow: 0px 0px 5px 2px black;
 }
