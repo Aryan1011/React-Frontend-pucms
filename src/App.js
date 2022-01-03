@@ -1,20 +1,13 @@
 import './App.css';
 import Child from './components/Child';
 import {
-  BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
-  useParams,
-  Routes,
-  useNavigate,
-  Navigate
+  Routes
 } from "react-router-dom";
 import Create from './components/Create';
 import Home from './components/Home';
 import Edit from './components/Edit';
 import Complaints from './components/Complaints';
-import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { useState ,useEffect } from 'react';
