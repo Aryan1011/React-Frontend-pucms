@@ -163,7 +163,86 @@
     height:400px;
   }
 }
+/*  */
+.headerText{
+  color:black ;
+  font-size:2.5rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+@media(max-width:590px){
+  .navButtons{
+    font-size: 0.8em;
+    padding: 1em 1em ;
+  }
+  .headerText{
+    font-size: 0.6em;
+  }
+  .modularTitleHeader{
+    font-size: 1.4em;
+  }
+  .contentCard{
+    font-size: 0.8em;
+  }
+  .newsHeading{
+    font-size: 1.4em;
+  }
+  .newsContent{
+    font-size: 0.8em;
+  }
+}
+@media(max-width:890px){
+  .headerText{
+    font-size: 2.0em;
+  }
+}
+@media(max-width:380px){
+  .headerText{
+    font-size: 0.3em;
+  }
 
+}
+@media(max-width:510px){
+  .navButtons{
+    font-size: 0.7em;
+    padding: 1em 1em;
+  }
+  .headerText{
+    font-size: 1.7em;
+  }
+}
+@media(max-width:430px){
+  .navButtons{
+    font-size: 0.7em;
+    padding: 0.9em 0.9em;
+  }
+  .modularTitleHeader{
+    font-size: 1em;
+    padding: 0.5em 0.5em;
+  }
+  .contentCard{
+    font-size: 0.5em;
+  }
+  .newsHeading{
+    font-size: 1em;
+    padding: 0.5em 0.5em;
+  }
+  .newsContent{
+    font-size: 0.5em;
+  }
+  .newsContainer{
+    padding: 0.5em 0.5em;
+  }
+  .modularContainer{
+    padding: 0.5em 0.5em;
+  }
+  .googleLoginButton{
+    font-size: 0.5em;
+    padding: 0.5em 0.5em;
+  }
+
+}
+/*  */
 @media(max-width:780px){
   .modularCard{
     flex-direction: column;
@@ -210,6 +289,13 @@
 
   .aboutusText{
     font-size:10px;
+  }
+  .modularContainer{
+    padding: 0.5em 0.5em;
+  }
+  .newsParentContainer{
+    padding: 0.5em 0.5em;
+    
   }
 }
 

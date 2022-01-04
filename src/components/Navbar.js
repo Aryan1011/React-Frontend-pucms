@@ -81,6 +81,7 @@ function Navbar({ boolUser ,setBoolUser,setUser,user }) {
                     onSuccess={onSuccess}
                     onFailure={onFailure}
                     cookiePolicy={'single_host_origin'}
+                    className='googleLoginButton'
                 />
                 )}
             </div>

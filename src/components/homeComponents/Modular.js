@@ -6,7 +6,7 @@ function Modular({data,title}) {
     return (
         <div className='modularContainer'>
         <div className="modularTitle">
-            <h1  >{title}</h1>
+            <h1 className='modularTitleHeader' >{title}</h1>
         </div>
             <div className='modularCard'>
             {data.map((d) => {
