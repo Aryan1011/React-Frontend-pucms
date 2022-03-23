@@ -9,6 +9,15 @@ import {
     useNavigate
 } from "react-router-dom";
 import ComplaintCard from './complaintComponents/ComplaintCard';
+// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { TailSpin } from  'react-loader-spinner'
+
+
+
+
+
+// const con = true;
+
 function Complaints({ user }) {
     const navigate=useNavigate();
     const [data, setData] = useState([]);
@@ -17,10 +26,14 @@ function Complaints({ user }) {
         setData(response.data);
         console.log('here');
     }
+    
     useEffect(() => {
         getAllComplaints();
     }, [])
     return (
+        <>
+
+       
         <div className='complaintCards' style={{ backgroundColor: ' rgb(247, 240, 240)' }}>
             <div className='complaintHeader'>
             <div>
@@ -40,16 +53,23 @@ function Complaints({ user }) {
                 </div>
             </div>
 
-            <div className='gridContainer'>
-                {data?.map((d, i) => {
+            <div className='gridContainer' style={{ display:'flex' ,width:'100%'}}>
+                {data?   data.map((d, i) => {
                     return (
                         <div key={i} className=" gridChild">
                             <ComplaintCard complaint={d} />
                         </div>
                     )
-                })}
-            </div>
+                }) 
+                :
+                <div style={{display:'flex',width:'100%', justifyContent:'center'}}>
+                <TailSpin color="#00BFFF" height={180} width={180} /> 
+                </div> 
+                 
+                }
+                </div>
         </div>
+        </>
     );
 }
 export default Complaints
