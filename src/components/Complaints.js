@@ -10,65 +10,69 @@ import {
 } from "react-router-dom";
 import ComplaintCard from './complaintComponents/ComplaintCard';
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import { TailSpin } from  'react-loader-spinner'
+import { TailSpin } from 'react-loader-spinner'
 
 
 
 
 
-// const con = true;
+const con = false;
 
 function Complaints({ user }) {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const [data, setData] = useState([]);
     const getAllComplaints = async () => {
         const response = await axios.get("https://backendpucmsawaaz.herokuapp.com/api/complaints");
         setData(response.data);
         console.log('here');
     }
-    
+
     useEffect(() => {
         getAllComplaints();
     }, [])
     return (
         <>
 
-       
-        <div className='complaintCards' style={{ backgroundColor: ' rgb(247, 240, 240)' }}>
-            <div className='complaintHeader'>
-            <div>
-            <button className='navButtons'  onClick={() => navigate(-1)}>
-                    Go Back
-                </button>
-            </div>
-                <div className='ComplaintHeaderCreate'>
-                    <Link to="/create">
-                        <button className='navButtons'>
-                            Create Complaint
-                        </button>
-                    </Link>
-                </div>
-                <div className='complaintHeaderHeading'>
-                    <h1>All Complaints </h1>
-                </div>
-            </div>
 
-            <div className='gridContainer' style={{ display:'flex' ,width:'100%'}}>
-                {data?   data.map((d, i) => {
-                    return (
-                        <div key={i} className=" gridChild">
-                            <ComplaintCard complaint={d} />
-                        </div>
-                    )
-                }) 
-                :
-                <div style={{display:'flex',width:'100%', justifyContent:'center'}}>
-                <TailSpin color="#00BFFF" height={180} width={180} /> 
-                </div> 
-                 
-                }
+            <div className='complaintCards' style={{ backgroundColor: ' rgb(247, 240, 240)' }}>
+                <div className='complaintHeader'>
+                    <div>
+                        <button className='navButtons' onClick={() => navigate(-1)}>
+                            Go Back
+                        </button>
+                    </div>
+                    <div className='ComplaintHeaderCreate'>
+                        <Link to="/create">
+                            <button className='navButtons'>
+                                Create Complaint
+                            </button>
+                        </Link>
+                    </div>
+                    <div className='complaintHeaderHeading'>
+                        <h1>All Complaints </h1>
+                    </div>
                 </div>
-        </div>
+
+
+                {
+                    !con ? (
+                        <div style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+                            <TailSpin color="#00BFFF" height={180} width={180} />
+                        </div>)
+                        :
+                        (<div className='gridContainer'>
+                     {data.map((d, i) => {
+                        return (
+                            <div key={i} className=" gridChild">
+                                <ComplaintCard complaint={d} />
+                            </div>
+                            )
+                    })}
+                        </div>)
+                        }
+
+
+            </div>
         </>
     );
 }
