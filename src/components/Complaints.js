@@ -13,17 +13,14 @@ import ComplaintCard from './complaintComponents/ComplaintCard';
 import { TailSpin } from 'react-loader-spinner'
 
 
-
-
-
-const con = false;
-
 function Complaints({ user }) {
+    const [con,setCon] = useState(false);
     const navigate = useNavigate();
     const [data, setData] = useState([]);
     const getAllComplaints = async () => {
         const response = await axios.get("https://backendpucmsawaaz.herokuapp.com/api/complaints");
         setData(response.data);
+        setCon(true);
         console.log('here');
     }
 
