@@ -40,17 +40,17 @@ function Navbar({ boolUser ,setBoolUser,setUser,user }) {
                         Home
                     </button>
                 </Link>
-                <Link to="/">
+                <Link to="/reach">
                     <button className='navButtons'>
                         Our Reach
                     </button>
                 </Link>
-                <Link to="/">
+                <Link to="/news">
                     <button className='navButtons'>
                         News
                     </button>
                 </Link>
-                <Link to="/">
+                <Link to="/stories">
                     <button className='navButtons'>
                         Stories
                     </button>
