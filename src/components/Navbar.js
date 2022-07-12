@@ -8,7 +8,7 @@ import {
   } from "react-router-dom";
 
 function Navbar({ boolUser ,setBoolUser,setUser,user }) {
- 
+    
     const clientId = '303134775990-1hf8tj1trd60o102ad65doskbe9lemnc.apps.googleusercontent.com';
     const onLogoutSuccess = () => {
         console.log("logout");
